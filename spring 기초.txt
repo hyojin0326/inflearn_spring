@@ -1,0 +1,12 @@
+**스프링 웹 개발 기초**
+
+크게 정적 컨텐츠, MVC와 테플릿엔진, API 세개로 구분된다. 
+
+-정적 컨텐츠 : 파일을 그냥 있는 그대로 내려준다. 
+ex) hello-static.html의 전달과정
+웹브라이저에서 hello-static.html
+
+
+
+-MVC와 템플릿 엔진 : 템플릿 엔진을 Model, View, Controller 방식으로 쪼개서 사용
+-API : 객체 반환, viewResolver가 아닌 HTTPMessageConverter 이용
