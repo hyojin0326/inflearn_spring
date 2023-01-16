@@ -1,8 +1,10 @@
 package he8.hello82.repository;
 
 import he8.hello82.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
+
 
 public class MemoryMemberRepository implements MemberRepository{
 
