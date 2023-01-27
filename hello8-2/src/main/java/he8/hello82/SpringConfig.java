@@ -1,5 +1,6 @@
 package he8.hello82;
 
+import he8.hello82.aop.TimeTraceAop;
 import he8.hello82.repository.JpaMemberRepository;
 import he8.hello82.repository.MemberRepository;
 import he8.hello82.repository.MemoryMemberRepository;
@@ -7,6 +8,8 @@ import he8.hello82.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.sql.Time;
 
 @Configuration
 public class SpringConfig {
@@ -24,9 +27,9 @@ public class SpringConfig {
         this.em = em;
     }*/
 
-    private final MemoryMemberRepository memberRepository;
+    private final MemberRepository memberRepository;
     @Autowired
-    public SpringConfig(MemoryMemberRepository memberRepository) {
+    public SpringConfig(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
 
@@ -36,12 +39,13 @@ public class SpringConfig {
         return new MemberService(memberRepository);
     }
 
+
     //@Bean
     //public MemberRepository memberRepository(){
         //return new JdbcMemberRepository(dataSource);
         //return하는 부분을 MemoryMemberRepository 가 아닌 JdbcMemberRepository로 변경하여
         // 다른 코드를 건드리지 않고도 가능함을 알수 있다.
         //return new JdbcMemberRepository(dataSource);
-        //return new JpaMemberRepository(em);
+        //return new Jpa MemberRepository(em);
     //}
 }
